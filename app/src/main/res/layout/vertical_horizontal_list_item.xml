@@ -26,22 +26,75 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
 
         <!-- TODO: Note that, unlike the grid view list, one card in the vertical and horizontal
                lists effectively take up the width of the screen. This means you have more
                room to display information spanning the width of the card.-->
 
-        <!-- TODO: Create an ImageView resource for the image of the dog.
-               The height should be 194dp
-               The width should match the with of the card
-               The scaleType should be set to centerCrop-->
+            <!-- TODO: Create an ImageView resource for the image of the dog.
+                    The height should be 194dp
+                    The width should match the with of the card
+                    The scaleType should be set to centerCrop-->
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- TODO: Create a TextView for each of the following:
-                The dog's name
-                The dog's age
-                The dog's hobbies-->
+            <!-- TODO: Create a TextView for each of the following:
+                    The dog's name
+                    The dog's age
+                    The dog's hobbies-->
+        <TextView
+            tools:text="Name"
+            android:id="@+id/dog_name"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_image" />
+
+        <TextView
+            android:id="@+id/dog_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dog_name"
+            tools:text="Age" />
+
+        <TextView
+            tools:text="Hobbies"
+            android:id="@+id/dog_hobbies"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/dog_age">
+
+        </TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.card.MaterialCardView>
